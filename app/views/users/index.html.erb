@@ -1,0 +1,19 @@
+<h1>ユーザ一覧</h1>
+
+</br>
+<%= page_entries_info(@users) %>
+</br>
+<%= paginate(@users) %>
+
+
+<ul>
+<% @users.each do |user| %>
+<li><%= link_to user.name, user %> <%= user.authority %> <%= user.authority %></li>
+<% end %>
+</ul>
+
+</br>
+<%= page_entries_info(@users) %>
+</br>
+<%= paginate(@users) %>
+

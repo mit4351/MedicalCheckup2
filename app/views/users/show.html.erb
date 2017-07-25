@@ -1,0 +1,24 @@
+<h1>ユーザ情報</h1>
+
+<table border="1">
+<tr>
+<th>名前</th>
+<td><%= @user.name %></td>
+</tr>
+<tr>
+<th>被保険者番号</th>
+<td><%= @user.enpno %></td>
+</tr>
+<tr>
+<th>権限</th>
+<td><%= @user.authority %></td>
+</tr>
+</table>
+
+<% if current_user?(@user) %>
+<p><%= link_to '編集', edit_user_path %></p>
+<% end %>
+
+<%= link_to "PDFで表示",
+user_path(@user, format: "pdf"), target: "_blank",
+:class => 'btn btn-primary' %>

@@ -1,0 +1,30 @@
+
+body {
+   background-color: #E6E6E6
+}
+
+
+ul.header_menue {
+   /* width: 600px; */
+    border:1px solid #A9E2F3;
+    background-color: #E3F6CE;
+    padding:0;
+    font-size:0px;
+}
+
+ul.header_menue li {
+    /* width:118px; */
+    width: 20%;
+    /* border:1px solid black; */
+    display: inline-block;
+    text-align: center;
+    font-size:16px;
+}
+
+ul.header_menue li:first-child {
+    /* height:60px; */
+}
+
+ul.header_menue li a {
+    display: block;
+}

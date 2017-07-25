@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MedicalCheckupSystem</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+<ul class = "header_menue">
+<% if authority? %>
+  <li><%= link_to signed_username, current_user %></li>
+  <li><%= link_to 'ログアウト', signout_path, method: :delete %></li>
+  <li><%= link_to 'ユーザ一覧', users_path %></li>
+  <li><%= link_to 'アカウント作成', signup_path %></li>
+  <li><a href="#9">Help</a></li>
+
+<% elsif signed_in? %>
+  <li><%= link_to signed_username, current_user %></li>
+  <li><%= link_to 'ログアウト', signout_path, method: :delete %></li>
+  <li></li>
+  <li></li>
+  <li><a href="#9">Help</a></li>
+
+<% else %>
+  <li><%= link_to 'ログイン', signin_path %></li>
+  <li><a href="#1">掲示板</a></li>
+  <li></li>
+  <li><a href="#8">Q&A</a></li>
+  <li><a href="#9">Help</a></li>
+<% end %>
+</ul>
+
+<hr>
+
+    <%= yield %>
+  </body>
+</html>
